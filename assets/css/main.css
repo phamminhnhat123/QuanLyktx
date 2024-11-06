@@ -1,0 +1,139 @@
+/* Thiết lập cơ bản cho trang */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.header img {
+    vertical-align: middle;
+}
+
+/* Navigation bar */
+.nav {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    height: 50px !important; /* Đặt chiều cao cho navbar */
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px !important;
+}
+
+.nav a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    flex-grow: 1; /* Cho phép các mục giãn ra và chiếm không gian đều nhau */
+}
+
+.nav a:hover {
+    background-color: #0056b3;
+    border-radius: 10px;
+}
+
+/* Main layout */
+.main {
+    display: flex;
+}
+
+/* Sidebar */
+
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Đặt chiều rộng cho sidebar */
+    background-color: #2f3b46;
+    padding: 10px;
+    color: white;
+}
+
+/* Mục menu trong sidebar */
+.menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+.submenu-item a {
+    color: white; /* Đặt màu chữ thành trắng */
+    text-decoration: none; /* Xóa đường gạch chân */
+}
+
+.submenu-item a:hover {
+    text-decoration: underline; /* Tạo hiệu ứng gạch chân khi di chuột qua */
+}
+
+.sidebar .menu-item:hover {
+    background-color: #3a4a58;
+}
+
+.sidebar .menu-item i {
+    margin-right: 10px;
+}
+
+.sidebar .menu-item.active {
+    background-color: #1a1a1a; /* Nền cho mục đang hoạt động */
+}
+
+/* Submenu */
+.sidebar .submenu {
+    background-color: #3a4a58;
+    padding-left: 20px;
+    display: none; /* Ẩn submenu mặc định */
+}
+
+.sidebar .submenu .submenu-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar .submenu .submenu-item:hover {
+    background-color: #4a5a68;
+}
+
+/* Nội dung chính */
+.content {
+    width: calc(100% - 250px); /* Chiều rộng nội dung chính là chiều rộng còn lại của màn hình */
+    padding: 5px;
+}
+
+.content img {
+    width: 100%; /* Đảm bảo ảnh chiếm hết chiều rộng của nội dung */
+    height: auto; /* Giữ tỷ lệ ảnh */
+}
+
+/* Các phần nổi bật */
+.highlight {
+    text-align: center;
+    font-size: 24px;
+    color: #0000ff;
+    margin: 20px 0;
+}
+
+/* Bố cục Flex */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-item {
+    background-color: #90ee90;
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}

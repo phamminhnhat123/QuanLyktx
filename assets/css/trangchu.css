@@ -1,0 +1,44 @@
+/* Thiết lập cơ bản cho trang */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header1 {
+    background-color: #fff;
+    padding: 0px;
+    text-align: center;
+}
+
+.header1 img {
+    vertical-align: middle;
+}
+
+/* Navigation bar */
+.nav {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    height: 50px; /* Đặt chiều cao cho navbar */
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.nav a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    flex-grow: 1; /* Cho phép các mục giãn ra và chiếm không gian đều nhau */
+}
+
+.nav a:hover {
+    background-color: #0056b3;
+    border-radius: 10px;
+}
+

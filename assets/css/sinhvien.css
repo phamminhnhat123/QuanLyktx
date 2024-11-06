@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #4A90E2;
+    padding: 10px 20px; /* Add horizontal padding for better spacing */
+    display: flex; /* Use Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.content {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.content img {
+    vertical-align: middle;
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    width: 70px; /* Đặt kích thước cố định cho logo */
+}
+
+.content h1 {
+    display: inline-block; /* Change to inline-block for proper spacing */
+    color: #007BFF;
+    font-size: 24px;
+    margin-left: 10px; /* Space between logo and text */
+}
+
+.anhnen {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+/* Responsive Image in .anhnen */
+.anhnen img {
+    max-width: 100%; /* Đảm bảo ảnh co giãn theo chiều rộng màn hình */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+/* Media Queries cho màn hình nhỏ (mobile) */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .content {
+        padding: 10px 0;
+    }
+
+    .content h1 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+}
+
+/* Media Queries cho màn hình rất nhỏ (dưới 480px) */
+@media screen and (max-width: 480px) {
+    .content h1 {
+        font-size: 18px;
+        margin-left: 2px;
+    }
+
+    .content {
+        padding: 5px 0;
+    }
+
+    .header {
+        padding: 5px;
+    }
+}
