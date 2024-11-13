@@ -31,9 +31,9 @@
                     <i class="fas fa-building text-gray-600"></i>
                     <span class="ml-2">Khu/Nhà/Phòng</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer" onclick="window.location.href='/../Quanliktx/view/sinhVienLienHe.php'">
                     <i class="fas fa-envelope text-gray-600"></i>
-                    <span class="ml-2">Yêu cầu từ sinh viên</span>
+                    <span class="ml-2">Liên hệ từ sinh viên</span>
                 </li>
                 <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
                     <i class="fas fa-door-open text-gray-600"></i>
@@ -54,7 +54,11 @@
                 <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
                     <i class="fas fa-plug text-gray-600"></i>
                     <span class="ml-2">Hóa đơn điện tử</span>
-                </li>  
+                </li> 
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
+                   <i class="fas fa-sign-out-alt text-gray-600"></i>
+                   <span class="ml-2">Đăng xuất</span>
+                </li> 
             </ul>
         </div>
          

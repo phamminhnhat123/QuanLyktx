@@ -2,8 +2,18 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        th, td {
+            text-align: center; /* Căn giữa nội dung */
+            vertical-align: middle; /* Căn giữa theo chiều dọc */
+            padding: 8px; /* Khoảng cách nội dung với đường viền */
+        }
+        table {
+            width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều rộng */
+        }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
 <div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
 <div class="w-full flex justify-center mt-0">
@@ -31,6 +41,7 @@
 </style>
 
 <div style="margin-top: 35px;" class="flex">
+    
         <!-- Sidebar -->
         <div class="w-64 bg-white h-screen shadow-md">
             <div class="p-4 border-b">
@@ -95,85 +106,83 @@ function confirmLogout() {
                
             </ul>
         </div>
-        
-         <div class="bg-blue-500 h-8"> </div>
-        <!-- Content Area -->
-        <div class="flex-1 p-8 bg-green-200 flex flex-col items-center justify-center">
-            <h1 class="text-2xl font-bold text-red-600 mb-4">Danh Sách Sinh Viên Đăng Ký Ở Nội Trú</h1>
-            
-            <!-- Image Container -->
-            <div class="overflow-x-auto w-full max-w-4xl">
-        <table  id="studentTable" class="min-w-full bg-white border border-gray-300">
-            <thead>
-                 <tr>
-                    <th class="px-4 py-2 border border-gray-300">ID</th>
-                    <th class="px-4 py-2 border border-gray-300">Mã sinh viên</th>
-                    <th class="px-4 py-2 border border-gray-300">Họ tên</th>
-                    <th class="px-4 py-2 border border-gray-300">lớp</th>
-                    <th class="px-4 py-2 border border-gray-300">Địa chỉ</th>
-                    <th class="px-4 py-2 border border-gray-300">giới tính</th>
-                    <th class="px-4 py-2 border border-gray-300">Ngày sinh</th>
-                    <th class="px-4 py-2 border border-gray-300">Khóa</th>
-                    <th class="px-4 py-2 border border-gray-300">Ngày bắt đầu</th>
-                    <th class="px-4 py-2 border border-gray-300">Ngày kết thúc</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-          
-            </tbody>
-        </table>
-    </div>
 
-    <script>
-function fetchData() {
-    // Thông báo xác nhận trước khi hiển thị toàn bộ danh sách
-    const userConfirm = confirm("Bạn muốn hiển thị toàn bộ danh sách?");
-    if (userConfirm) {
-        fetch('/../Quanliktx/controller/sinhVienDangKy.php')
-            .then(response => response.json())
-            .then(data => {
-                let tableBody = document.getElementById('tableBody');
-                tableBody.innerHTML = ""; // Xóa nội dung cũ
+    <!-- Main Content for Water Bill Interface -->
+    <div class="flex-1 p-8 overflow-auto bg-gray-50">
 
-                data.forEach(row => {
-                    let tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td class="border border-gray-400 px-4 py-2">${row.id}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.masv}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.ten}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.lop}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.tinh}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.gioitinh}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.ngaysinh}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.khoa1}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.ngaybatdau}</td>
-                        <td class="border border-gray-400 px-4 py-2">${row.ngayketthuc}</td>
-                        
-                    `;
-                    tableBody.appendChild(tr);
-                });
-            })
-            .catch(error => console.error('Error:', error)); 
-    }
-}
-</script>
-            
-            <!-- Buttons -->
-            <div class="flex space-x-4 mt-4">
-                <button class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 flex items-center">
-                    <i class="fas fa-trash-alt mr-2"></i> Delete
-                </button>
-                <button class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 flex items-center">
-                    <i class="fas fa-arrow-left mr-2"></i> Back
-                </button>
-                <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 flex items-center">
-                    <i class="fas fa-plus mr-2"></i> Add
-                </button>
-                <button onclick="fetchData()" class="bg-yellow-400 text-black font-bold py-2 px-4 rounded flex items-center">
-                <i class="fas fa-eye mr-2"></i> Hiển thị
-            </button>
-            </div>
+        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Hóa đơn nước</h2>
+
+        <div class="overflow-x-auto shadow-lg rounded-lg">
+            <table class="min-w-full table-auto bg-white">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-4 border-b">ID</th>
+                        <th class="py-2 px-4 border-b">Phòng</th>
+                        <th class="py-2 px-4 border-b">Khu</th>
+                        <th class="py-2 px-4 border-b">Số nước đã dùng (m³)</th>
+                        <th class="py-2 px-4 border-b">Thành tiền (VNĐ)</th>
+                        <th class="py-2 px-4 border-b">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="water-bill-table">
+                </tbody>
+            </table>
         </div>
+
     </div>
+
+</div>
+
+<script>
+function calculateWaterBill(waterUsage) {
+        const costPerCubicMeter = 4000; // 1m³ = 4000 đồng
+        return waterUsage * costPerCubicMeter;
+    }
+
+    function addWaterBillRow(id, room, area, waterUsage) {
+        const table = document.getElementById("water-bill-table");
+        const row = document.createElement("tr");
+        row.classList.add("border-t", "hover:bg-gray-50");
+
+        const totalAmount = calculateWaterBill(waterUsage);
+
+        row.innerHTML = `
+            <td class="px-6 py-4 text-center">${id}</td>
+            <td class="px-6 py-4 text-center">${room}</td>
+            <td class="px-6 py-4 text-center">${area}</td>
+            <td class="px-6 py-4 text-center">${waterUsage}</td>
+            <td class="px-6 py-4 text-center">${totalAmount.toLocaleString('vi-VN')}</td>
+            <td class="px-6 py-4 text-center">
+                <button class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none transition-all duration-200" onclick="editRow(this)">Sửa</button>
+                <button class="px-3 py-1 ml-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none transition-all duration-200" onclick="deleteRow(this)">Xóa</button>
+            </td>
+        `;
+        table.appendChild(row);
+    }
+
+    function editRow(button) {
+        const row = button.closest('tr');
+        const cells = row.getElementsByTagName('td');
+        const waterUsage = cells[3].innerText;
+
+        const newWaterUsage = prompt("Nhập lại số nước đã dùng (m³):", waterUsage);
+        if (newWaterUsage) {
+            cells[3].innerText = newWaterUsage;
+            cells[4].innerText = calculateWaterBill(newWaterUsage).toLocaleString('vi-VN');
+        }
+    }
+
+    function deleteRow(button) {
+        const row = button.closest('tr');
+        if (confirm("Bạn có chắc chắn muốn xóa hóa đơn này?")) {
+            row.remove();
+        }
+    }
+
+    // Example data entry
+    addWaterBillRow("002", "B202", "Khu B", 25);
+    addWaterBillRow("003", "C303", "Khu C", 15);
+</script>
+
 </body>
 </html>

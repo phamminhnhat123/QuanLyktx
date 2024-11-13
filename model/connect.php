@@ -9,5 +9,5 @@
   if(!$conn){
     echo "kết nối thất bại :". mysqli_connect_errno();
   }
-  echo "";
+  echo "ok";
 ?>

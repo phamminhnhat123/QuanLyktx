@@ -112,38 +112,40 @@
 
 
     <!-- Form container -->
-    <div class="container">
-      <form  action="/../Quanliktx/controller/thanhToanTienDien.php" method="POST">
-      <div class="form-container">
-        <div class="search-box">
-          <div class="header1">
-              <h1>$ Thanh toán tiền điện</h1>
-              <p>Thanh toán theo từng phòng</p>
-              <div class="breadcrumb">
-                  <a href="#"><i class="fas fa-home"></i></a>
-                  <span>/</span>
-                  <a href="#">Biểu Mẫu</a>
-                  <span>/</span>
-                  <a href="#">Thanh Toán Tiền Điện</a>
-              </div>
-          </div>
-          <div>
-              <label for="dormitory">Ký túc xá</label>
-              <select id="dormitory" name="dormitory">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-              </select>
-          </div>
-          <div>
-              <label for="room">Phòng</label>
-              <input type="text" id="room" name="room" placeholder="Phòng">
-          </div>
-          <div>
-              <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+    <!-- Form container -->
+<div class="container">
+  <form action="/../Quanliktx/controller/thanhToanTienDien.php" method="POST">
+    <div class="form-container">
+      <div class="search-box">
+        <div class="header1">
+          <h1>$ Thanh toán tiền điện</h1>
+          <p>Thanh toán theo từng phòng</p>
+          <div class="breadcrumb">
+            <a href="#"><i class="fas fa-home"></i></a>
+            <span>/</span>
+            <a href="#">Biểu Mẫu</a>
+            <span>/</span>
+            <a href="#">Thanh Toán Tiền Điện</a>
           </div>
         </div>
-</form>
+        <div>
+          <label for="dormitory">Ký túc xá</label>
+          <select id="dormitory" name="dormitory">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div>
+          <label for="room">Phòng</label>
+          <input type="text" id="room" name="room" placeholder="Phòng">
+        </div>
+        <div>
+          <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+        </div>
+      </div>
+  </form>
+
         <div style="height: 320px;" class="qr-code">
             <p>TRUONG DAI HOC CNTT VA TT VIET HAN</p>
             <p>KY TUC XA VKU</p>
@@ -153,40 +155,41 @@
         </div>
       </div>
 
-       <!-- Hiển thị bảng kết quả tìm kiếm nếu có -->
-       <?php if (isset($payments) && count($payments) > 0): ?>
-        <div class="table-container">
-          <table>
-            <thead>
+     <!-- Hiển thị bảng kết quả tìm kiếm nếu có kết quả và phương thức là POST -->
+  <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+    <?php if (count($payments) > 0): ?>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Phòng</th>
+              <th>Ký túc xá</th>
+              <th>Tháng</th>
+              <th>Sử dụng vượt mức (kWh)</th>
+              <th>Thành tiền (VND)</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($payments as $payment): ?>
               <tr>
-                <th>Phòng</th>
-                <th>Ký túc xá</th>
-                <th>Tháng</th>
-                <th>Sử dụng vượt mức (kWh)</th>
-                <th>Thành tiền (VND)</th>
-                <th>Trạng thái</th>
+                <td><?php echo htmlspecialchars($payment['room']); ?></td>
+                <td><?php echo htmlspecialchars($payment['dormitory']); ?></td>
+                <td><?php echo htmlspecialchars($payment['month']); ?></td>
+                <td><?php echo htmlspecialchars($payment['usage']); ?></td>
+                <td><?php echo number_format($payment['amount']); ?></td>
+                <td><button class="status-button unpaid">Thanh toán</button></td>
               </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($payments as $payment): ?>
-                <tr>
-                  <td><?php echo $payment['room']; ?></td>
-                  <td><?php echo $payment['dormitory']; ?></td>
-                  <td><?php echo $payment['month']; ?></td>
-                  <td><?php echo $payment['usage']; ?></td>
-                  <td><?php echo number_format($payment['amount']); ?></td>
-                  <td><button class="status-button unpaid">Thanh toán</button></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-      <?php else: ?>
-        <p>Không tìm thấy kết quả phù hợp.</p>
-      <?php endif; ?>
-    </div>
-  </div>
-  
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    <?php else: ?>
+      <p>Không tìm thấy kết quả phù hợp.</p>
+    <?php endif; ?>
+  <?php endif; ?>
+</div>
+
   <script>
     // JavaScript để điều khiển menu "Biểu mẫu"
     const menuToggle = document.getElementById('menu-toggle');

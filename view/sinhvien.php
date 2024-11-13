@@ -2,7 +2,7 @@
 session_start();
 
 // Thông tin kết nối cơ sở dữ liệu
-$servername = "localhost:3306";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
 $dbname = "qlktx";

@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 // Kết nối đến cơ sở dữ liệu
-$conn = new mysqli("localhost:3306", "root", "", "qlktx");
+$conn = new mysqli("localhost:3307", "root", "", "qlktx");
 
 // Kiểm tra kết nối
 if ($conn->connect_error) {

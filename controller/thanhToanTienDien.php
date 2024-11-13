@@ -1,23 +1,44 @@
 <?php
-// Kết nối cơ sở dữ liệu
-require __DIR__.'/../model/connect.php';
+ $localhost = "localhost:3307";
+ $user = "root";
+ $pass = "";
+ $database = "qlktx";
 
+ $conn = new mysqli($localhost, $user, $pass, $database);
+ if(!$conn){
+   echo "kết nối thất bại :". mysqli_connect_errno();
+ }
+ echo "";
+ 
+// Khởi tạo mảng $payments để lưu kết quả tìm kiếm
+$payments = [];
 
-// Lấy dữ liệu từ form nếu người dùng nhấn "Tìm kiếm"
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $dormitory = $_POST['dormitory'];
-    $room = $_POST['room'];
+// Chỉ thực hiện tìm kiếm khi phương thức là POST và các trường bắt buộc đã được gửi
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Lấy dữ liệu từ biểu mẫu
+    $dormitory = isset($_POST['dormitory']) ? $_POST['dormitory'] : null;
+    $room = isset($_POST['room']) ? $_POST['room'] : null;
 
-    // Truy vấn cơ sở dữ liệu
-    $sql = "SELECT * FROM tiendien WHERE dormitory LIKE ? AND room LIKE ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $dormitory, $room);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    if ($dormitory && $room) {
+        // Chuẩn bị câu lệnh SQL
+        $stmt = $conn->prepare("SELECT * FROM tiendien WHERE dormitory = ? AND room = ?");
+        $stmt->bind_param("ii", $dormitory, $room);
 
-    $payments = [];
-    while ($row = $result->fetch_assoc()) {
-        $payments[] = $row;
+        // Thực thi và lấy kết quả
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Đưa dữ liệu vào mảng $payments
+        while ($row = $result->fetch_assoc()) {
+            $payments[] = $row;
+        }
+
+        // Giải phóng tài nguyên
+        $stmt->close();
     }
 }
+ 
+
+// Đóng kết nối
+$conn->close();
 ?>

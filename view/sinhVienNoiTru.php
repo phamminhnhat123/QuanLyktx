@@ -4,15 +4,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
  </head>
  <body class="bg-gray-100">
-  <!-- <div class="bg-blue-500 h-8">
-  </div> -->
-  <div class="flex">
+  
+ <div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
+<div class="w-full flex justify-center mt-0">
+ <div class="overflow-hidden whitespace-nowrap w-[400px]">
+   <p class="text-2xl text-yellow-500 font-bold inline-block animate-marquee">
+     HỆ THỐNG QUẢN LÝ KÍ TÚC XÁ VKU
+   </p>
+ </div>
+</div>
+</div>
+
+<style>
+ @keyframes marquee {
+   0% {
+     transform: translateX(100%);
+   }
+   100% {
+     transform: translateX(-100%);
+   }
+ }
+
+ .animate-marquee {
+   animation: marquee 6s linear infinite;
+ }
+</style>
+
+<div style="margin-top: 35px;" class="flex">
         <!-- Sidebar -->
         <div class="w-64 bg-white h-screen shadow-md">
-            <div class="p-4 border-b " onclick="window.location.href='/../Quanliktx/view/Admin.php'">
-                <i class="fas fa-home text-blue-500"></i>
-                <span class="ml-2 font-semibold">Dashboard</span>
-            </div>
+         <div class="p-4 border-b cursor-pointer" onclick="window.location.href='/Quanliktx/view/Admin.php'">
+             <i class="fas fa-home text-blue-500"></i>
+             <span class="ml-2 font-semibold">Dashboard</span>
+        </div>
+
             <ul class="mt-4">
                 <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
                     <i class="fas fa-cogs text-gray-600"></i>
@@ -22,7 +47,6 @@
                    <i class="fas fa-users text-gray-600"></i>
                    <span class="ml-2">Sinh viên nội trú</span>
                </li>
-
                 <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer" onclick="window.location.href='/../Quanliktx/view/sinhVienDangKy.php'">
                     <i class="fas fa-user-graduate text-gray-600"></i>
                     <span class="ml-2">Sinh viên đăng kí</span>
@@ -31,9 +55,9 @@
                     <i class="fas fa-building text-gray-600"></i>
                     <span class="ml-2">Khu/Nhà/Phòng</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer"  onclick="window.location.href='/../Quanliktx/view/sinhVienLienHe.php'">
                     <i class="fas fa-envelope text-gray-600"></i>
-                    <span class="ml-2">Yêu cầu từ sinh viên</span>
+                    <span class="ml-2">Liên hệ từ sinh viên</span>
                 </li>
                 <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
                     <i class="fas fa-door-open text-gray-600"></i>
@@ -47,16 +71,32 @@
                     <i class="fas fa-money-bill-wave text-gray-600"></i>
                     <span class="ml-2">Hoàn trả phí</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer" onclick="window.location.href='/../Quanliktx/view/HoaDonDien.php'">
                     <i class="fas fa-bolt text-gray-600"></i>
-                    <span class="ml-2">Hóa đơn-Điện nước</span>
+                    <span class="ml-2">Hóa đơn điện </span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer">
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer" onclick="window.location.href='/../Quanliktx/view/HoaDonNuoc.php'">
                     <i class="fas fa-plug text-gray-600"></i>
-                    <span class="ml-2">Hóa đơn điện tử</span>
-                </li>  
+                    <span class="ml-2">Hóa đơn nước</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-200 cursor-pointer" onclick="confirmLogout()">
+                    <i class="fas fa-sign-out-alt text-gray-600"></i>
+                    <span class="ml-2">Đăng xuất</span>
+                </li>
+
+<script>
+function confirmLogout() {
+    // Hiển thị hộp thoại xác nhận
+    if (confirm("Bạn có muốn đăng xuất không?")) {
+        // Nếu nhấn OK, chuyển hướng đến trang sinhvien.php
+        window.location.href = "sinhvien.php";
+    }
+}
+</script>
+               
             </ul>
         </div>
+
         <div class="container mx-auto p-4">
         <div class="text-center text-red-600 text-2xl font-bold mb-4">Sinh Viên Ở Nội Trú Ký Túc Xá VKU</div>
         <div class="flex justify-center mb-4">

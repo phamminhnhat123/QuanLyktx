@@ -2,7 +2,17 @@
  <head>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
- </head>
+  <style>
+        th, td {
+            text-align: center; /* Căn giữa nội dung */
+            vertical-align: middle; /* Căn giữa theo chiều dọc */
+            padding: 8px; /* Khoảng cách nội dung với đường viền */
+        }
+        table {
+            width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều rộng */
+        }
+  </style>
+</head>
  <body class="bg-gray-100">
 
  <div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
@@ -32,8 +42,8 @@
 
 <div style="margin-top: 35px;" class="flex">
         <!-- Sidebar -->
-        <div class="w-64 bg-white h-screen shadow-md">
-            <div class="p-4 border-b"  onclick="window.location.href='/../Quanliktx/view/Admin.php'">
+       <div class="w-64 bg-white h-screen shadow-md">
+            <div class="p-4 border-b">
                 <i class="fas fa-home text-blue-500"></i>
                 <span class="ml-2 font-semibold">Dashboard</span>
             </div>
@@ -95,55 +105,63 @@ function confirmLogout() {
                
             </ul>
         </div>
-        
-        <!-- Main Content -->
+
+        <!-- Main content -->
         <div class="flex-1 p-6">
-            <div class="flex items-center mb-4">
-                <span class="text-gray-600">Home</span>
-                <i class="fas fa-chevron-right mx-2 text-gray-600"></i>
-                <span class="text-gray-600">Dashboard</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-lg font-semibold mb-4">Thống kê nhà phòng</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="flex items-center p-4 bg-blue-100 rounded-lg">
-                        <i class="fas fa-home text-blue-500 text-2xl"></i>
-                        <div class="ml-4">
-                            <p class="text-2xl font-semibold">3</p>
-                            <p>Nhà</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-green-100 rounded-lg">
-                        <i class="fas fa-door-open text-green-500 text-2xl"></i>
-                        <div class="ml-4">
-                            <p class="text-2xl font-semibold">420</p>
-                            <p>Phòng</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-red-100 rounded-lg">
-                        <i class="fas fa-bed text-red-500 text-2xl"></i>
-                        <div class="ml-4">
-                            <p class="text-2xl font-semibold">160</p>
-                            <p>Chỗ trống</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-yellow-100 rounded-lg">
-                        <i class="fas fa-user-check text-yellow-500 text-2xl"></i>
-                        <div class="ml-4">
-                            <p class="text-2xl font-semibold">2.163</p>
-                            <p>Sinh viên đang ở</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-red-100 rounded-lg">
-                        <i class="fas fa-sign-out-alt text-red-500 text-2xl"></i>
-                        <div class="ml-4">
-                            <p class="text-2xl font-semibold">125</p>
-                            <p>Sinh viên trả phòng</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="text-2xl font-semibold mb-4">Hóa đơn điện</h1>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">ID</th>
+                        <th class="py-2 px-4 border-b">Phòng</th>
+                        <th class="py-2 px-4 border-b">Khu</th>
+                        <th class="py-2 px-4 border-b">Chữ số điện cũ</th>
+                        <th class="py-2 px-4 border-b">Chữ số điện mới</th>
+                        <th class="py-2 px-4 border-b">Thành tiền</th>
+                        <th class="py-2 px-4 border-b">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="billTable">
+                    <tr>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">101</td>
+                        <td class="py-2 px-4 border-b">A</td>
+                        <td class="py-2 px-4 border-b">1000</td>
+                        <td class="py-2 px-4 border-b">1050</td>
+                        <td class="py-2 px-4 border-b" id="totalAmount-1"></td>
+                        <td class="py-2 px-4 border-b">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">Sửa</button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Xóa</button>
+                            <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Cập nhật</button>
+                        </td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
         </div>
-    </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const rows = document.querySelectorAll('#billTable tr');
+                rows.forEach((row, index) => {
+                    const oldReading = parseInt(row.children[3].textContent);
+const newReading = parseInt(row.children[4].textContent);
+                    const totalAmountCell = row.children[5];
+
+                    if (!isNaN(oldReading) && !isNaN(newReading)) {
+                        const totalAmount = (newReading - oldReading) * 3000;
+                        totalAmountCell.textContent = totalAmount.toLocaleString('vi-VN') + ' VND';
+                    }
+                });
+            });
+
+            function confirmLogout() {
+                // Hiển thị hộp thoại xác nhận
+                if (confirm("Bạn có muốn đăng xuất không?")) {
+                    // Nếu nhấn OK, chuyển hướng đến trang sinhvien.php
+                    window.location.href = "sinhvien.php";
+                }
+            }
+        </script>
  </body>
 </html>
