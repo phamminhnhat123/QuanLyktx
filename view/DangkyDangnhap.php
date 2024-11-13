@@ -4,6 +4,9 @@
    Trang Thông Tin Sinh Viên Ở Ký Túc Xá VKU
   </title>
   <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
    body {
             margin: 0;
@@ -90,10 +93,10 @@
    <div class="overlay-container">
     <div class="overlay">
      <h2>
-      Dành cho sinh viên chưa ở KTX
+      Dành cho sinh viên chưa ở <br> KTX
      </h2>
      <a href="/../Quanliktx/view/Dangky.php">
-      ĐĂNG KÝ
+     <span class="glyphicon glyphicon-user"></span> Đăng ký
      </a>
     </div>
     <div class="overlay">
@@ -101,7 +104,7 @@
       Dành cho sinh viên đang ở <br> KTX
      </h2>
      <a href="/../Quanliktx/view/Dangnhap.php">
-      ĐĂNG NHẬP
+     <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
      </a>
     </div>
    </div>

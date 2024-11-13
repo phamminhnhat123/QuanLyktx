@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Web Page
+   Giới thiệu
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -16,44 +16,44 @@
     <div class="flex items-center">
      <img alt="Logo" class="h-10" height="100" src="/../Quanliktx/assets/img/logotruong.png" width="100"/>
     </div>
-    <nav class="space-x-4 text-blue-700 font-semibold">
-     <a class="hover:text-blue-900" href="/../Quanliktx/index.php">
-      Trang chủ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/gioithieu.php">
-      Giới thiệu
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/sinhvien.php">
-      Sinh viên
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/tintuc.php">
-      Tin tức
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/phongo.php">
-      Phòng ở
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thongbao.php">
-      Thông báo
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thanhtra_phapche.php">
-      Thanh tra - Pháp chế
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/doanthe.php">
-      Đoàn thể
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/lienhe.php">
-      Liên hệ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/bieumau.php">
-      Biểu mẫu
-     </a>
+
+    <nav class="space-x-5 text-blue-700 font-semibold"> <!-- Chỉnh lại space-x-5 ở đây -->
+    <a href="/../Quanliktx/model/trangchu.php">
+      <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+      <span>Trang chủ</span>
+    </a>
+    <a href="/../Quanliktx/view/gioithieu.php">
+      <i class="fas fa-info-circle"></i> <!-- Font Awesome info-circle icon -->
+      <span>Giới thiệu</span>
+    </a>
+    <a href="/../Quanliktx/view/phongo.php" >
+      <i class="fas fa-bed"></i> <!-- Font Awesome bed icon -->
+      <span>Phòng ở</span>
+    </a>
+    <a href="/../Quanliktx/view/thongbao.php">
+      <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+      <span>Thông báo</span>
+    </a>
+    <a href="/../Quanliktx/view/lienhe.php">
+      <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+      <span>Liên hệ</span>
+    </a>
+    <a href="/../Quanliktx/view/DangkyDangnhap.php">
+      <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
+      <span>Đăng nhập</span>
+    </a>
+    <a href="/../Quanliktx/view/sinhvien.php">
+      <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
+      <span>Admin</span>
+    </a>
     </nav>
     <div>
      <i class="fas fa-search text-blue-700">
      </i>
     </div>
    </div>
-  </header>
+</header>
+
   <!-- Main Content -->
   <main class="container mx-auto mt-4">
    <!-- Banner -->
@@ -129,7 +129,7 @@
 
    <!-- Section 2 -->
    <div class="flex items-start mb-8">
-    <img alt="Person standing on a ledge looking through a telescope" width="300" height="150" src="https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/419006739_786878373483480_7675666081349904407_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHgy6F-TaMjmkeIU-j3w73bHHehFnD14f8cd6EWcPXh_zOn3H9qkrHqpBfT3Lcn-9qcPKLJ9cvwH0YKvdngFRSN&_nc_ohc=U4UqgjQQfikQ7kNvgFh9hHm&_nc_zt=23&_nc_ht=scontent.fdad2-1.fna&_nc_gid=AQu57HRphAQvzbtGysH8Ski&oh=00_AYD-sLRD0ZJH9qt_n6sGzg-XywTEtykmtndRropYhiasvQ&oe=6728EB4E"/>
+    <img alt="Person standing on a ledge looking through a telescope" width="300" height="150" src="/../Quanliktx/assets/img/tamnhin.jpg"/>
     <div class="ml-4 flex flex-col justify-center">
         <h2 class="text-blue-600 font-bold text-lg">
             TẦM NHÌN
@@ -140,24 +140,25 @@
     </div>
 </div>
 
-   <!-- Section 3 -->
-   <div class="flex items-start mb-8">
-    <img alt="Hand holding a target with various icons around it" style="width: 410px; height :200px;" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/425450545_800193392151978_8641897410587639892_n.jpg?stp=c189.0.1671.1671a_cp6_dst-jpg_s206x206&_nc_cat=109&ccb=1-7&_nc_sid=50ad20&_nc_eui2=AeHbSQZN0TEYmtIF7_TKyb6mqnS_suMX1jeqdL-y4xfWN3Whrs63pBl1n7BMaOhfyoWlejqdwA-uDgvKhz1tLQFe&_nc_ohc=60ce2xX_HsMQ7kNvgF2A21O&_nc_zt=23&_nc_ht=scontent.fdad1-1.fna&_nc_gid=Anu86olgTMvoas4D6S7oGGU&oh=00_AYD3l9R9_vJOGYfGAD906YYHChaeSeVxSaOsuQLXxn6pJw&oe=672ABCD6" width="300"/>
-    <div class="ml-4">
-     <h2 class="text-blue-600 font-bold text-lg">
-      MỤC TIÊU TRỌNG TÂM
-     </h2>
-     <p class="text-base mb-2">
+    <!-- Section 3 -->
+    <div class="flex items-start mb-8">
+    <img alt="Person standing on a ledge looking through a telescope" width="300" height="150" src="/../Quanliktx/assets/img/muctieu.jpg"/>
+    <div class="ml-4 flex flex-col justify-center">
+        <h2 class="text-blue-600 font-bold text-lg">
+        MỤC TIÊU TRỌNG TÂM
+        </h2>
+        <p class="text-base mb-2">
       Xây dựng hệ thống Ký túc xá VKU là môi trường rèn luyện - học tập, môi trường sống xanh, hạnh phúc; không gian cư trú lý tưởng của sinh viên.
      </p>
      <p class="text-base">
       Quản trị hiệu quả hệ thống cơ sở vật chất; hoàn thiện bộ máy tổ chức phù hợp với xu thế tự chủ đơn vị sự nghiệp công và phát triển tài chính bền vững đơn vị sự nghiệp chi thường xuyên.
      </p>
     </div>
-   </div>
+</div>
+
    <!-- Section 4 -->
    <div class="flex items-start mb-8">
-    <img alt="Diagram with core values" style="width: 300px; height : 200px" src="https://scontent.fdad1-2.fna.fbcdn.net/v/t39.30808-6/306579133_474458251392162_4864175787243403037_n.png?stp=dst-png_s206x206&_nc_cat=102&ccb=1-7&_nc_sid=7a06f5&_nc_eui2=AeEQS2tXscqiBKFW5ooAPoX6OASZtKJpXbA4BJm0omldsEB_V9g_NutcuJu1yxOweZBGHRiprtvYqotqLtViaspH&_nc_ohc=-Nfb0sCYIU4Q7kNvgGLJncu&_nc_zt=23&_nc_ht=scontent.fdad1-2.fna&_nc_gid=Apg7_fMLF722a795JBXhvfc&oh=00_AYBeIToWJumItC3EdREQvxsrjOG5bJWYgs2R3Vgtl_kMzg&oe=672AC665" width="300"/>
+    <img alt="Diagram with core values" style="width: 300px; height : 200px" src="/../Quanliktx/assets/img/giatri.jpg" width="300"/>
     <div class="ml-4">
      <h2 class="text-blue-600 font-bold text-lg">
       GIÁ TRỊ CỐT LÕI:

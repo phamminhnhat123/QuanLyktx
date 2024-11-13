@@ -1,6 +1,6 @@
 <?php
    
-  $localhost = "localhost:3307";
+  $localhost = "localhost:3306";
   $user = "root";
   $pass = "";
   $database = "qlktx";
@@ -9,5 +9,5 @@
   if(!$conn){
     echo "kết nối thất bại :". mysqli_connect_errno();
   }
-  echo "oke";
+  echo "";
 ?>

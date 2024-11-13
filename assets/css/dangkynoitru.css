@@ -111,6 +111,7 @@ body {
 .content {
     width: calc(100% - 250px); /* Chiều rộng nội dung chính là chiều rộng còn lại của màn hình */
     padding: 5px;
+
 }
 
 
@@ -152,7 +153,7 @@ body {
   
 }
 .notification {
-    
+    margin-left: 250px;
     background-color: white;
     padding: 20px;
     border-radius: 5px;

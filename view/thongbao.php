@@ -10,49 +10,50 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
  </head>
  <body class="bg-gray-100">
+
  <header class="bg-white shadow">
    <div class="container mx-auto flex justify-between items-center py-4 px-6">
     <div class="flex items-center">
      <img alt="Logo" class="h-10" height="100" src="/../Quanliktx/assets/img/logotruong.png" width="100"/>
     </div>
-    <nav class="space-x-4 text-blue-700 font-semibold">
-     <a class="hover:text-blue-900" href="/../Quanliktx/index.php">
-      Trang chủ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/gioithieu.php">
-      Giới thiệu
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/sinhvien.php">
-      Sinh viên
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/tintuc.php">
-      Tin tức
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/phongo.php">
-      Phòng ở
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thongbao.php">
-      Thông báo
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thanhtra_phapche.php">
-      Thanh tra - Pháp chế
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/doanthe.php">
-      Đoàn thể
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/lienhe.php">
-      Liên hệ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/bieumau.php">
-      Biểu mẫu
-     </a>
+
+    <nav class="space-x-5 text-blue-700 font-semibold"> <!-- Chỉnh lại space-x-5 ở đây -->
+    <a href="/../Quanliktx/model/trangchu.php">
+      <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+      <span>Trang chủ</span>
+    </a>
+    <a href="/../Quanliktx/view/gioithieu.php">
+      <i class="fas fa-info-circle"></i> <!-- Font Awesome info-circle icon -->
+      <span>Giới thiệu</span>
+    </a>
+    <a href="/../Quanliktx/view/phongo.php" >
+      <i class="fas fa-bed"></i> <!-- Font Awesome bed icon -->
+      <span>Phòng ở</span>
+    </a>
+    <a href="/../Quanliktx/view/thongbao.php">
+      <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+      <span>Thông báo</span>
+    </a>
+    <a href="/../Quanliktx/view/lienhe.php">
+      <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+      <span>Liên hệ</span>
+    </a>
+    <a href="/../Quanliktx/view/DangkyDangnhap.php">
+      <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
+      <span>Đăng nhập</span>
+    </a>
+    <a href="/../Quanliktx/view/sinhvien.php">
+      <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
+      <span>Admin</span>
+    </a>
     </nav>
     <div>
      <i class="fas fa-search text-blue-700">
      </i>
     </div>
    </div>
-  </header>
+</header>
+
   <div class="container mx-auto">
    <!-- Header Image -->
    <div class="relative">

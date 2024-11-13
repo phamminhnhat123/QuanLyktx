@@ -15,16 +15,40 @@
   </div>
 
   <div class="nav">
-    <a href="/../Quanliktx/index.php">Trang chủ</a>
-    <a href="/../Quanliktx/view/gioithieu.php">Giới thiệu</a>
-    <a href="/../Quanliktx/view/sinhvien.php">Sinh viên</a>
-    <a href="/../Quanliktx/view/tintuc.php">Tin tức</a>
-    <a href="/../Quanliktx/view/phongo.php">Phòng ở</a>
-    <a href="/../Quanliktx/view/thongbao.php">Thông báo</a>
-    <a href="/../Quanliktx/view/thanhtra_phapche.php">Thanh tra-Pháp chế</a>
-    <a href="/../Quanliktx/view/doanthe.php">Đoàn thể</a>
-    <a href="/../Quanliktx/view/lienhe.php">Liên hệ</a>
-    <a href="/../Quanliktx/view/bieumau.php">Đăng nhập</a>
+  <a href="/../Quanliktx/index.php">
+  <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+  <span>Trang chủ</span>
+</a>
+<a href="/../Quanliktx/view/gioithieu.php">
+  <i class="fas fa-info-circle"></i> <!-- Font Awesome info-circle icon -->
+  <span>Giới thiệu</span>
+</a>
+    <!-- <a href="/../Quanliktx/view/sinhvien.php">Sinh viên</a> -->
+    <!-- <a href="/../Quanliktx/view/tintuc.php">Tin tức</a> -->
+    <a href="/../Quanliktx/view/phongo.php" >
+  <i class="fas fa-bed"></i> <!-- Font Awesome bed icon -->
+  <span>Phòng ở</span>
+</a>
+    <a href="/../Quanliktx/view/thongbao.php">
+  <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+  <span>Thông báo</span>
+</a>
+    <!-- <a href="/../Quanliktx/view/thanhtra_phapche.php">Thanh tra-Pháp chế</a> -->
+    <!-- <a href="/../Quanliktx/view/doanthe.php">Đoàn thể</a> -->
+    <a href="/../Quanliktx/view/lienhe.php">
+  <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+  <span>Liên hệ</span>
+</a>
+    <!-- <a href="/../Quanliktx/view/DangkyDangnhap.php">Đăng nhập</a> -->
+    <a href="/../Quanliktx/view/DangkyDangnhap.php">
+  <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
+  <span>Đăng nhập</span>
+</a>
+<a href="/../Quanliktx/view/sinhvien.php">
+  <!-- Icon Admin (User Shield) -->
+  <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
+  <span>Admin</span>
+</a>
   </div>
 
 

@@ -27,6 +27,7 @@
             return true; // Cho phép gửi biểu mẫu
         }
     </script>
+   
 </head>
 <body>
   <div class="header">
@@ -34,21 +35,40 @@
   </div>
 
   <div class="nav">
-    <a href="/../Quanliktx/model/trangchu.php">Trang chủ</a>
-    <a href="/../Quanliktx/view/gioithieu.php">Giới thiệu</a>
-    <a href="/../Quanliktx/view/sinhvien.php">Sinh viên</a>
-    <a href="/../Quanliktx/view/tintuc.php">Tin tức</a>
-    <a href="/../Quanliktx/view/phongo.php">Phòng ở</a>
-    <a href="/../Quanliktx/view/thongbao.php">Thông báo</a>
-    <a href="/../Quanliktx/view/bieumau.php">Biểu mẫu</a>
-    <a href="/../Quanliktx/view/thanhtra_phapche.php">Thanh tra-Pháp chế</a>
-    <a href="/../Quanliktx/view/doanthe.php">Đoàn thể</a>
-    <a href="/../Quanliktx/view/lienhe.php">Liên hệ</a>
+  <a href="/../Quanliktx/model/trangchu.php">
+  <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+  <span>Trang chủ</span>
+</a>
+<a href="/../Quanliktx/view/gioithieu.php">
+  <i class="fas fa-info-circle"></i> <!-- Font Awesome info-circle icon -->
+  <span>Giới thiệu</span>
+</a>
+    <a href="/../Quanliktx/view/phongo.php" >
+  <i class="fas fa-bed"></i> <!-- Font Awesome bed icon -->
+  <span>Phòng ở</span>
+</a>
+    <a href="/../Quanliktx/view/thongbao.php">
+  <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+  <span>Thông báo</span>
+</a>
+    <a href="/../Quanliktx/view/lienhe.php">
+  <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+  <span>Liên hệ</span>
+</a>
+    <a href="/../Quanliktx/view/DangkyDangnhap.php">
+  <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
+  <span>Đăng nhập</span>
+</a>
+<a href="/../Quanliktx/view/sinhvien.php">
+  <!-- Icon Admin (User Shield) -->
+  <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
+  <span>Admin</span>
+</a>
   </div>
-
   <div class="main">
     <div class="sidebar">
-    <div class="menu-item" id="menu-toggle">
+        <!-- Biểu mẫu -->
+        <div class="menu-item" id="menu-toggle">
             <i class="fas fa-edit"></i>
             <span>Biểu mẫu</span>
             <i class="fas fa-chevron-down" style="margin-left:auto;"></i>
@@ -56,35 +76,60 @@
         
         <div class="submenu">
             <div class="submenu-item">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/DangKyNoiTru.php">Đăng ký nội trú KTX</a></span>
             </div>
             <div class="submenu-item">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/thanhtoantienphong.php">Thanh toán tiền phòng</a></span>
             </div>
             <div class="submenu-item">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/thanhtoantiendien.php">Thanh toán tiền điện</a></span>
             </div>
             <div class="submenu-item active">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/thanhtoantiennuoc.php">Thanh toán tiền nước</a></span>
             </div>
             <div class="submenu-item">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/ThanhToanChiPhiKhac.php">Thanh toán chi phí khác</a></span>
             </div>
             <div class="submenu-item">
-                <i class="fas fa-arrow-right"></i>
+                <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
                 <span><a href="/../Quanliktx/view/ThanhToanTienCocNoiTru.php">Thanh toán tiền cọc nội trú</a></span>
             </div>
         </div>
-        <div class="menu-item">
+       
+        <!-- Hướng dẫn -->
+        <div class="menu-item" id="menu-toggle1">
             <i class="fas fa-file-alt"></i>
             <span>Hướng dẫn</span>
+            <i class="fas fa-chevron-down" style="margin-left:auto;"></i>
+        </div>
+        
+    <div class="submenu">
+         <div class="submenu-item">
+             <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
+             <span><a href="https://kytucxa.vku.udn.vn/docs/2022-2023/Mau%2001A%20-%20Don%20dang%20ky%20o%20noi%20tru.pdf" download="Don dang ky o noi tru.pdf">Đơn đăng ký nội trú </a></span>
+          </div>
+          <div class="submenu-item">
+             <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
+             <span><a href="https://kytucxa.vku.udn.vn/docs/2022-2023/Mau%2002A%20-%20Hop%20dong%20noi%20tru.pdf" download="Hop dong o noi tru.pdf">Hợp đồng ở nội trú</a></span>
+          </div>
+          <div class="submenu-item">
+             <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
+             <span><a href="https://kytucxa.vku.udn.vn/docs/2022-2023/Mau%2002C%20-%20Hop%20dong%20noi%20tru%20-%20Khu%20dich%20vu.pdf" download="Hop dong o noi tru khu dich vu.pdf">Hợp đồng ở nội trú - khu dịch vụ</a></span>
+          </div>
+          <div class="submenu-item">
+             <i class="icon fa fa-chevron-circle-right" style="margin-right: 10px;"></i>
+             <span><a href="https://kytucxa.vku.udn.vn/docs/2022-2023/1.%20912%20QD%20ban%20hanh%20quy%20dinh%20cong%20tac%20sinh%20vien%20noi%20tru%20VKU_0001.pdf" download="Quy dinh cong tac o noi tru.pdf">Quy định công tác ở nội trú</a></span>
+          </div>
+
         </div>
     </div>
+
+
     <div class="content">
     <div class="header1">
         <i class="fas fa-edit"></i>
@@ -114,71 +159,71 @@
     <h1>Biểu mẫu đăng ký nội trú</h1>
     <h2>Thông tin sinh viên</h2>
     <form id="registrationForm" action="/../Quanliktx/controller/DangKyNoiTru.php" method="POST" onsubmit="return validateForm();">
-        <div class="two-column">
+    <div class="two-column">
         <div class="form-group">
-        <label for="masv">Mã số sinh viên</label>
-        <input type="text" id="masv" name="masv" placeholder="Mã số sinh viên" required>
-    </div>
-    <div class="form-group">
-        <label for="ten">Họ Tên</label>
-        <input type="text" id="ten" name="ten" placeholder="Họ và tên" required>
-    </div>
-    <div class="form-group">
-        <label for="dob">Ngày sinh</label>
-        <input type="date" id="ngaysinh" name="ngaysinh" placeholder="Ngày sinh" required>
-    </div>
-    <div class="form-group">
-        <label>Giới tính</label>
-        <div class="radio-group">
-            <input type="radio" id="male" name="gioitinh" value="male" required>
-            <label for="male">Nam</label>
-            <input type="radio" id="female" name="gioitinh" value="female" required>
-            <label for="female">Nữ</label>
+            <label for="masv">Mã số sinh viên</label>
+            <input type="text" id="masv" name="masv" placeholder="Mã số sinh viên" required>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="dienthoai">Điện Thoại</label>
-        <input type="text" id="dienthoai" name="dienthoai" placeholder="Điện thoại" required>
-    </div>
-    <div class="form-group">
-        <label for="noisinh">Nơi sinh</label>
-        <input type="text" id="noisinh" name="noisinh" placeholder="Nơi sinh" required>
-    </div>
-    <div class="form-group">
-        <label for="emailcanhan">Email Cá nhân</label>
-        <input type="email" id="emailcanhan" name="emailcanhan" placeholder="Email cá nhân" required>
-    </div>
-    <div class="form-group">
-        <label for="emailvku">Email VKU</label>
-        <input type="email" id="emailvku" name="emailvku" placeholder="Email VKU" required>
-    </div>
-    <div class="form-group">
-        <label for="khoa">Khóa</label>
-        <input type="text" id="khoa" name="khoa" placeholder="Khóa" required>
-    </div>
-    <div class="form-group">
-        <label for="khoa1">Khoa</label>
-        <input type="text" id="khoa1" name="khoa1" placeholder="Khoa" required>
-    </div>
-    <div class="form-group">
-        <label for="nganh">Ngành</label>
-        <input type="text" id="nganh" name="nganh" placeholder="Ngành" required>
-    </div>
-    <div class="form-group">
-        <label for="lop">Lớp</label>
-        <input type="text" id="lop" name="lop" placeholder="Lớp" required>
-    </div>
-    <div class="form-group">
-        <label for="cccd">CMND/CCCD</label>
-        <input type="text" id="cccd" name="cccd" placeholder="CMND/CCCD" required>
-    </div>
-    <div class="form-group">
-        <label for="ngaycap">Ngày Cấp</label>
-        <input type="text" id="ngaycap" name="ngaycap" placeholder="DD/MM/YYYY" required>
-    </div>
-    <div class="form-group">
-        <label for="dantoc">Dân Tộc</label>
-        <select id="dantoc" name="dantoc" required>
+        <div class="form-group">
+            <label for="ten">Họ Tên</label>
+            <input type="text" id="ten" name="ten" placeholder="Họ và tên" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Ngày sinh</label>
+            <input type="date" id="ngaysinh" name="ngaysinh" placeholder="Ngày sinh" required>
+        </div>
+        <div class="form-group">
+            <label>Giới tính</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gioitinh" value="male" required>
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="gioitinh" value="female" required>
+                <label for="female">Nữ</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dienthoai">Điện Thoại</label>
+            <input type="text" id="dienthoai" name="dienthoai" placeholder="Điện thoại" required>
+        </div>
+        <div class="form-group">
+            <label for="noisinh">Nơi sinh</label>
+            <input type="text" id="noisinh" name="noisinh" placeholder="Nơi sinh" required>
+        </div>
+        <div class="form-group">
+            <label for="emailcanhan">Email Cá nhân</label>
+            <input type="email" id="emailcanhan" name="emailcanhan" placeholder="Email cá nhân" required>
+        </div>
+        <div class="form-group">
+            <label for="emailvku">Email VKU</label>
+            <input type="email" id="emailvku" name="emailvku" placeholder="Email VKU" required>
+        </div>
+        <div class="form-group">
+            <label for="khoa">Khóa</label>
+            <input type="text" id="khoa" name="khoa" placeholder="Khóa" required>
+        </div>
+        <div class="form-group">
+            <label for="khoa1">Khoa</label>
+            <input type="text" id="khoa1" name="khoa1" placeholder="Khoa" required>
+        </div>
+        <div class="form-group">
+            <label for="nganh">Ngành</label>
+            <input type="text" id="nganh" name="nganh" placeholder="Ngành" required>
+        </div>
+        <div class="form-group">
+            <label for="lop">Lớp</label>
+            <input type="text" id="lop" name="lop" placeholder="Lớp" required>
+        </div>
+        <div class="form-group">
+            <label for="cccd">CMND/CCCD</label>
+            <input type="text" id="cccd" name="cccd" placeholder="CMND/CCCD" required>
+        </div>
+        <div class="form-group">
+            <label for="ngaycap">Ngày cấp</label>
+            <input type="date" id="ngaycap" name="ngaycap" placeholder="Ngày cấp" required>
+        </div>
+        <div class="form-group">
+            <label for="dantoc">Dân tộc</label>
+            <select id="dantoc" name="dantoc" required>
             <option value="">Chọn Dân tộc</option>
             <option value="kinh">Kinh</option>
             <option value="tay">Tày</option>
@@ -215,11 +260,12 @@
             <option value="xo">Xơ Đăng</option>
             <option value="ro-mam">Rơ Măm</option>
             <option value="tho">Thổ</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="tongiao">Tôn Giáo</label>
-        <select id="tongiao" name="tongiao">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tongiao">Tôn giáo</label>
+            <select id="tongiao" name="tongiao">
+            <option value="phat-giao">Không</option>
             <option value="phat-giao">Phật giáo</option>
             <option value="cong-giao">Công giáo</option>
             <option value="tin-lanh">Tin Lành</option>
@@ -229,12 +275,13 @@
             <option value="bahai">Bahá'í</option>
             <option value="minh-ly-dao">Minh Lý Đạo</option>
             <option value="than-linh-dao">Thần Linh Đạo</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="tinh">TP/Tỉnh</label>
-        <select id="tinh" name="tinh" required>
-            <option value="An Giang">An Giang</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tinh">TP/Tỉnh</label>
+            <select id="tinh" name="tinh" required>
+                <option value="">Chọn TP/Tỉnh</option>
+                <option value="An Giang">An Giang</option>
             <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
             <option value="Bắc Giang">Bắc Giang</option>
             <option value="Bắc Kạn">Bắc Kạn</option>
@@ -295,133 +342,96 @@
             <option value="Vĩnh Long">Vĩnh Long</option>
             <option value="Vĩnh Phúc">Vĩnh Phúc</option>
             <option value="Yên Bái">Yên Bái</option>
-        </select>
-            </div>
-            <div class="form-group">
-    <label for="huyen">Quận/Huyện/Thị trấn</label>
-    <input type="text" id="huyen" name="huyen" placeholder="Quận/Huyện/Thị trấn" required>
-</div>
-<div class="form-group">
-    <label for="xa">Phường/Xã/Ấp</label>
-    <input type="text" id="xa" name="xa" placeholder="Phường/Xã/Ấp" required>
-</div>
-<div class="form-group">
-    <label for="sonha">Số nhà/Tên đường</label>
-    <input type="text" id="sonha" name="sonha" placeholder="Số nhà, Tên đường " required> 
-</div>
-
-            <div class="form-group">
-        <label for="ngaybatdau">Ngày Bắt Đầu</label>
-        <input type="date" id="ngaybatdau" name="ngaybatdau" placeholder="Ngày bắt đầu" required>
-    </div>
-    <div class="form-group">
-        <label for="ngayketthuc">Ngày Kết Thúc</label>
-        <input type="date" id="ngayketthuc" name="ngayketthuc" placeholder="Ngày kết thúc" required>
-    </div>
-    <div class="form-group">
-        <label for="sophong">Số Phòng</label>
-        <input type="text" id="sophong" name="sophong" placeholder="Số Phòng" required>
-    </div>
+            </select>
         </div>
-    </form>
-
-    <h2>Thông tin người thân</h2>
-    <div class="form-group">
-    <label for="hotennguoithan">Họ tên</label>
-    <input type="text" id="hotennguoithan" name="hotennguoithan" placeholder="Họ Tên" required>
-</div>
-<div class="form-group">
-    <label for="quanhe">Quan hệ</label>
-    <select id="quanhe" name="quanhe" required>
-        <option>Chọn quan hệ người thân...</option>
-        <option>Cha</option>
-        <option>Mẹ</option>
-        <option>Anh/Chị/Em</option>
-        <option>Ông/Bà</option>
-    </select>
-</div>
-<div class="form-group">
-    <label for="dienthoainguoithan">Điện thoại</label>
-    <input type="text" id="dienthoainguoithan" name="dienthoainguoithan" placeholder="Điện thoại" required>
-</div>
-<div class="form-group">
-    <label>Địa chỉ thường trú</label>
-    <div class="radio-group">
-        <input type="radio" id="diaChi1" name="diachithuongtru" value="nhuThongTinSinhVien" required>
-        <label for="diaChi1">Như thông tin sinh viên</label>
-        <input type="radio" id="diaChi2" name="diachithuongtru" value="khac" required>
-        <label for="diaChi2">Khác</label>
+        <div class="form-group">
+            <label for="huyen">Quận/Huyện/Thị trấn</label>
+            <input type="text" id="huyen" name="huyen" placeholder="Quận/Huyện/Thị trấn" required>
+        </div>
+        <div class="form-group">
+            <label for="xa">Phường/Xã/Ấp</label>
+            <input type="text" id="xa" name="xa" placeholder="Phường/Xã/Ấp" required>
+        </div>
+        <div class="form-group">
+            <label for="sonha">Số nhà/Tên đường</label>
+            <input type="text" id="sonha" name="sonha" placeholder="Số nhà, Tên đường" required>
+        </div>
+        <div class="form-group">
+            <label for="ngaybatdau">Ngày bắt đầu</label>
+            <input type="date" id="ngaybatdau" name="ngaybatdau" placeholder="Ngày bắt đầu" required>
+        </div>
+        <div class="form-group">
+            <label for="ngayketthuc">Ngày kết thúc</label>
+            <input type="date" id="ngayketthuc" name="ngayketthuc" placeholder="Ngày kết thúc" required>
+        </div>
+        <div class="form-group">
+            <label for="sophong">Số phòng</label>
+            <input type="text" id="sophong" name="sophong" placeholder="Số phòng" required>
+        </div>
+        <div class="form-group">
+            <label for="khu">khu</label>
+            <input type="text" id="khu" name="khu" placeholder="khu" required>
+        </div>
     </div>
-</div>
 
-    <h2>Đối Tượng Ưu Tiên</h2>
-    <ul class="priority-list">
-        <li><input type="radio" name="chonktx" id="priority1"><label for="priority1">Ưu tiên 1: Bản thân sinh viên là: Anh hùng lực lượng vũ trang, anh hùng lao động, thương binh, bệnh binh, người hưởng chính sách như thương binh, sinh viên khuyết tật.</label></li>
-        <li><input type="radio" name="chonktx" id="priority2"><label for="priority2">Ưu tiên 2: Con liệt sĩ, con thương binh, con bệnh binh, con của người hưởng chính sách như thương binh, con của người có công.</label></li>
-        <li><input type="radio" name="chonktx" id="priority3"><label for="priority3">Ưu tiên 3: Sinh viên là người dân tộc thiểu số.</label></li>
-        <li><input type="radio" name="chonktx" id="priority4"><label for="priority4">Ưu tiên 4: Sinh viên mồ côi cả cha và mẹ.</label></li>
-        <li><input type="radio" name="chonktx" id="priority5"><label for="priority5">Ưu tiên 5: Con hộ nghèo, hộ cận nghèo theo quy định của Nhà nước.</label></li>
-        <li><input type="radio" name="chonktx" id="priority6"><label for="priority6">Ưu tiên 6: Hộ khẩu thường trú tại vùng cao, vùng khó khăn.</label></li>
-        <li><input type="radio" name="chonktx" id="priority7"><label for="priority7">Ưu tiên 7: Có thành tích cá nhân nổi bật trong học tập; hoạt động Đảng – Đoàn thể chính trị, xã hội; phong trào văn nghệ, thể thao (được khen thưởng từ cấp Tỉnh thành trở lên).</label></li>
-        <li><input type="radio" name="chonktx" id="priority8"><label for="priority8">Ưu tiên 8: Các trường hợp còn lại.</label></li>
-    </ul>
-    
-    <h2>Đăng ký Ký túc xá</h2>
+    <!-- Thông tin người thân -->
+    <h2>Thông tin người thân</h2>
+    <div class="two-column">
     <div class="form-group">
-        <label for="dormitory">Chọn Ký túc xá</label>
-        <select id="dormitory" name="chonktx" required>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+        <label for="hotennguoithan">Họ tên người thân</label>
+        <input type="text" id="hotennguoithan" name="hotennguoithan" placeholder="Họ tên người thân" required>
+    </div>
+    <div class="form-group">
+        <label for="quanhe">Quan hệ</label>
+        <select id="quanhe" name="quanhe" required>
+            <option value="">Chọn quan hệ</option>
+            <option value="cha">Cha</option>
+            <option value="me">Mẹ</option>
+            <option value="anh-chi-em">Anh/Chị/Em</option>
+            <option value="ong-ba">Ông/Bà</option>
         </select>
     </div>
-    <div class="form-actions">
-        <button type="submit" class="btn-register"><i class="fas fa-check"></i> Đăng ký</button>
-        <button type="reset" class="btn-cancel"><i class="fas fa-times"></i> Hủy</button>
+    <div class="form-group">
+        <label for="dienthoainguoithan">Điện thoại người thân</label>
+        <input type="text" id="dienthoainguoithan" name="dienthoainguoithan" placeholder="Điện thoại người thân" required>
     </div>
-</div>
-<div style="color:#2f3b46;  text-align: center; margin: 0" class="footer-bottom">
-        <p>© Copyright <?php echo date('Y'); ?>. Đại Học Công Nghệ Thông Tin Và Truyền Thông Việt Hàn - Đại Học Đà Nẵng</p>
+    <div class="form-group">
+        <label>Địa chỉ thường trú</label>
+        <div class="radio-group">
+            <input type="radio" id="diaChi1" name="diachithuongtru" value="nhuThongTinSinhVien" required>
+            <label for="diaChi1">Như thông tin sinh viên</label>
+            <input type="radio" id="diaChi2" name="diachithuongtru" value="khac" required>
+            <label for="diaChi2">Khác</label>
+        </div>
     </div>
-
     </div>
-    
+    <div class="two-column">
+    <div class="form-group">
+    <button type="submit" name="dangky" class="btn-register"><i class="fas fa-check"></i> Đăng ký</button>
+    <button type="reset" name="huy" class="btn-cancel"><i class="fas fa-times"></i> Hủy</button>
+    </div>
+    </div>
 </form>
-<script>
-document.getElementById('registrationForm').onsubmit = function(event) {
-    // Kiểm tra nếu form chưa đủ thông tin
-    let isValid = true;
-    const inputs = this.querySelectorAll('input[required], select[required]');
-    inputs.forEach(input => {
-        if (!input.value) {
-            isValid = false; // Nếu có trường chưa được điền
-        }
-    });
-
-    if (!isValid) {
-        alert("Bạn phải nhập đầy đủ thông tin trước khi đăng ký!");
-        event.preventDefault(); // Ngăn gửi form
-    } else {
-        alert("Đăng ký thành công!");
-        // Nếu muốn có thể gửi form sau khi hiển thị thông báo
-        // this.submit();
-    }
-};
-</script>
-
 
   </div>
   
-  
-
   <script>
-        // JavaScript để điều khiển menu
-        const menuToggle = document.getElementById('menu-toggle');
-        const submenu = document.querySelector('.submenu');
+    // JavaScript để điều khiển menu "Biểu mẫu"
+    const menuToggle = document.getElementById('menu-toggle');
+    const submenu = menuToggle.nextElementSibling;  // Lấy phần tử .submenu ngay sau menu-toggle
 
-        menuToggle.addEventListener('click', () => {
-            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
-        });
-    </script>
+    menuToggle.addEventListener('click', () => {
+        submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+    });
+
+    // JavaScript để điều khiển menu "Hướng dẫn"
+    const menuToggle1 = document.getElementById('menu-toggle1');
+    const submenu1 = menuToggle1.nextElementSibling; // Lấy phần tử .submenu ngay sau menu-toggle1
+
+    menuToggle1.addEventListener('click', () => {
+        submenu1.style.display = (submenu1.style.display === 'none' || submenu1.style.display === '') ? 'block' : 'none';
+    });
+</script>
+
 </body>
 </html>

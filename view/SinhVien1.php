@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
         }
         .bg {
-            background-image: url('https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/460974260_955825703255412_4533415765689183883_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFuCl_s-Rk8QYT5J1JEvwYCCtmtivQ8dDkK2a2K9Dx0OUb2_hfs0Sdkezm5TDp-tqyayla3AswLkZK4mMchCenm&_nc_ohc=f2bNCFnqQpoQ7kNvgEulhgM&_nc_zt=23&_nc_ht=scontent.fdad1-1.fna&_nc_gid=A7KfaiYXKtqryELVkINq8-f&oh=00_AYByU_UIDjctGgNJjepbtPzzSvTdSMBtiHQ54io453c_Eg&oe=672E5892');
+            background-image: url('/../Quanliktx/assets/img/amthucvku.jpg');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;

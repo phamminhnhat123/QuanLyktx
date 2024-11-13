@@ -21,6 +21,7 @@
             padding: 20px;
             background-color: #fff;
         }
+        
         h1 {
             font-size: 2em;
             margin-bottom: 10px;
@@ -99,44 +100,44 @@
     <div class="flex items-center">
      <img alt="Logo" class="h-10" height="100" src="/../Quanliktx/assets/img/logotruong.png" width="100"/>
     </div>
-    <nav class="space-x-4 text-blue-700 font-semibold">
-     <a class="hover:text-blue-900" href="/../Quanliktx/index.php">
-      Trang chủ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/gioithieu.php">
-      Giới thiệu
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/sinhvien.php">
-      Sinh viên
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/tintuc.php">
-      Tin tức
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/phongo.php">
-      Phòng ở
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thongbao.php">
-      Thông báo
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/thanhtra_phapche.php">
-      Thanh tra - Pháp chế
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/doanthe.php">
-      Đoàn thể
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/lienhe.php">
-      Liên hệ
-     </a>
-     <a class="hover:text-blue-900" href="/../Quanliktx/view/bieumau.php">
-      Biểu mẫu
-     </a>
+
+    <nav class="space-x-5 text-blue-700 font-semibold"> <!-- Giảm khoảng cách -->
+    <a href="/../Quanliktx/model/trangchu.php">
+      <i class="fas fa-home"></i> <!-- Font Awesome home icon -->
+      <span>Trang chủ</span>
+    </a>
+    <a href="/../Quanliktx/view/gioithieu.php">
+      <i class="fas fa-info-circle"></i> <!-- Font Awesome info-circle icon -->
+      <span>Giới thiệu</span>
+    </a>
+    <a href="/../Quanliktx/view/phongo.php" >
+      <i class="fas fa-bed"></i> <!-- Font Awesome bed icon -->
+      <span>Phòng ở</span>
+    </a>
+    <a href="/../Quanliktx/view/thongbao.php">
+      <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+      <span>Thông báo</span>
+    </a>
+    <a href="/../Quanliktx/view/lienhe.php">
+      <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+      <span>Liên hệ</span>
+    </a>
+    <a href="/../Quanliktx/view/DangkyDangnhap.php">
+      <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
+      <span>Đăng nhập</span>
+    </a>
+    <a href="/../Quanliktx/view/sinhvien.php">
+      <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
+      <span>Admin</span>
+    </a>
     </nav>
     <div>
      <i class="fas fa-search text-blue-700">
      </i>
     </div>
    </div>
-  </header>
+</header>
+
 
   <div class="relative pt-[56.25%]"> 
   <iframe
@@ -152,33 +153,33 @@
     <div class="container">
         <h1>Liên hệ</h1>
         <p>Hãy nhập form dưới đây để liên hệ với chúng tôi!</p>
-        <form>
-            <div>
-                <label for="name">Họ và tên *</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div>
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div class="full-width">
-                <label for="phone">Số điện thoại</label>
-                <input type="text" id="phone" name="phone">
-            </div>
-            <div class="full-width">
-                <label for="department">Phòng ban</label>
-                <select id="department" name="department">
-                    <option value="phong-tong-hop">Phòng Tổng hợp</option>
-                </select>
-            </div>
-            <div class="full-width">
-                <label for="message">Nội dung liên hệ *</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-            </div>
-            <div class="full-width">
-                <button type="submit">GỬI LIÊN HỆ</button>
-            </div>
-        </form>
+        <form action="/../Quanliktx/controller/lienhe.php" method="POST">
+    <div>
+        <label for="name">Họ và tên *</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <div class="full-width">
+        <label for="phone">Số điện thoại</label>
+        <input type="text" id="phone" name="phone">
+    </div>
+    <div class="full-width">
+        <label for="department">Phòng ban</label>
+        <select id="department" name="department">
+            <option value="phong-quan-ly">Phòng quản lý</option>
+        </select>
+    </div>
+    <div class="full-width">
+        <label for="message">Nội dung liên hệ *</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+    </div>
+    <div class="full-width">
+        <button type="submit">GỬI LIÊN HỆ</button>
+    </div>
+</form>
         <div class="emergency-contact">
             <h2>TỔNG ĐÀI KÝ TÚC XÁ: 	0236.3.962.965<br>DANH BẠ TRUNG TÂM QUẢN LÝ KÝ TÚC XÁ ĐHCNTT-TTVH VKU</h2>
             <div class="section-title">Các số điện thoại khẩn cấp</div>

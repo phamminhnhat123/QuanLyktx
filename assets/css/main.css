@@ -13,6 +13,7 @@ body {
 
 .header img {
     vertical-align: middle;
+    width: 100%;
 }
 
 /* Navigation bar */
@@ -104,6 +105,8 @@ body {
 .sidebar .submenu .submenu-item:hover {
     background-color: #4a5a68;
 }
+
+
 
 /* Nội dung chính */
 .content {

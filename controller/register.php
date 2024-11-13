@@ -1,6 +1,6 @@
 <?php
 // Thông tin kết nối
-$servername = "localhost:3307";
+$servername = "localhost:3306";
 $username = "root";
 $password = "";
 $dbname = "qlktx";

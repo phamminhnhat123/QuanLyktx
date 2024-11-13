@@ -1,211 +1,76 @@
 <?php
-// Kiểm tra xem form đã gửi dữ liệu hay chưa
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<pre>";
-    print_r($_POST); // Hoặc dùng var_dump($_POST);
-    echo "</pre>";
-} else {
-    echo "Chưa có dữ liệu từ form.";
-}
-?>
-
-
-<?php
-// Hiển thị lỗi để dễ dàng kiểm tra trong quá trình phát triển
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// Kết nối cơ sở dữ liệu
-require "/../xam/htdocs/Quanliktx/model/connect.php";
-
-// Kiểm tra phương thức POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Lấy dữ liệu từ biểu mẫu
-    $masv = $_POST['masv'];
-    $ten = $_POST['ten'];
-    $ngaysinh = $_POST['ngaysinh'];
-    $gioitinh = $_POST['gioitinh'];
-    $dienthoai = $_POST['dienthoai'];
-    $noisinh = $_POST['noisinh'];
-    $emailcanhan = $_POST['emailcanhan'];
-    $emailvku = $_POST['emailvku'];
-    $khoa = $_POST['khoa'];
-    $khoa1 = $_POST['khoa1'];
-    $nganh = $_POST['nganh'];
-    $lop = $_POST['lop'];
-    $cccd = $_POST['cccd'];
-    $ngaycap = $_POST['ngaycap'];
-    $dantoc = $_POST['dantoc'];
-    $tongiao = $_POST['tongiao'];
-    $tinh = $_POST['tinh'];
-    $huyen = $_POST['huyen'];
-    $xa = $_POST['xa'];
-    $sonha = $_POST['sonha'];
-    $hotennguoithan = $_POST['hotennguoithan'];
-    $quanhe = $_POST['quanhe'];
-    $dienthoainguoithan = $_POST['dienthoainguoithan'];
-    $diachithuongtru = $_POST['diachithuongtru'];
-    $chonktx = $_POST['chonktx'];
-
-    // Chuẩn bị và thực thi câu lệnh SQL
-    try {
-        // Chuẩn bị câu lệnh SQL
-        $stmt = $conn->prepare("INSERT INTO dangkynoitru (masv, ten, ngaysinh, gioitinh, dienthoai, noisinh, emailcanhan, emailvku, khoa, khoa1, nganh, lop, cccd, ngaycap, dantoc, tongiao, tinh, huyen, xa, sonha, hotennguoithan, quanhe, dienthoainguoithan, diachithuongtru, chonktx) 
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        
-        if ($stmt === false) {
-            throw new Exception("Chuẩn bị câu lệnh thất bại: " . $conn->error);
-        }
-    
-        // Gán các giá trị cho câu lệnh
-        $stmt->bind_param(
-            "sssssssssssssssssssssssss",
-            $masv,
-            $ten,
-            $ngaysinh,
-            $gioitinh,
-            $dienthoai,
-            $noisinh,
-            $emailcanhan,
-            $emailvku,
-            $khoa,
-            $khoa1,
-            $nganh,
-            $lop,
-            $cccd,
-            $ngaycap,
-            $dantoc,
-            $tongiao,
-            $tinh,
-            $huyen,
-            $xa,
-            $sonha,
-            $hotennguoithan,
-            $quanhe,
-            $dienthoainguoithan,
-            $diachithuongtru,
-            $chonktx
-        );
-    
-        // Thực thi câu lệnh
-        if ($stmt->execute()) {
-            echo "Thông tin sinh viên đã được thêm thành công!";
-        } else {
-            throw new Exception("Lỗi khi thực thi: " . $stmt->error);
-        }
-    
-        // Đóng câu lệnh
-        $stmt->close();
-    
-    } catch (Exception $e) {
-        echo "Có lỗi xảy ra: " . $e->getMessage();
-    }
-    
-    // Đóng kết nối
-    $conn->close();
-}
-?>
-
-<?php
-// Thông tin kết nối
-$servername = "localhost:3307";
+// Kết nối tới cơ sở dữ liệu
+$servername = "localhost:3306"; 
 $username = "root";
 $password = "";
 $dbname = "qlktx";
 
-// Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Kiểm tra kết nối
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
-else{
-    echo "ketnoithanhcong";
-}
 
-// Nhận dữ liệu từ form
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Lấy dữ liệu từ biểu mẫu
-    $masv = $_POST['masv'];
-    $ten = $_POST['ten'];
-    $ngaysinh = $_POST['ngaysinh'];
-    $gioitinh = $_POST['gioitinh'];
-    $dienthoai = $_POST['dienthoai'];
-    $noisinh = $_POST['noisinh'];
-    $emailcanhan = $_POST['emailcanhan'];
-    $emailvku = $_POST['emailvku'];
-    $khoa = $_POST['khoa'];
-    $khoa1 = $_POST['khoa1'];
-    $nganh = $_POST['nganh'];
-    $lop = $_POST['lop'];
-    $cccd = $_POST['cccd'];
-    $ngaycap = $_POST['ngaycap'];
-    $dantoc = $_POST['dantoc'];
-    $tongiao = $_POST['tongiao'];
-    $tinh = $_POST['tinh'];
-    $huyen = $_POST['huyen'];
-    $xa = $_POST['xa'];
-    $sonha = $_POST['sonha'];
-    $hotennguoithan = $_POST['hotennguoithan'];
-    $quanhe = $_POST['quanhe'];
-    $dienthoainguoithan = $_POST['dienthoainguoithan'];
-    $diachithuongtru = $_POST['diachithuongtru'];
-    $chonktx = $_POST['chonktx'];
+$masv = isset($_POST['masv']) ? $_POST['masv'] : '';
+$cccd = isset($_POST['cccd']) ? $_POST['cccd'] : '';
 
-    // Kiểm tra xem mã sinh viên hoặc CCCD đã tồn tại trong cơ sở dữ liệu chưa
-    $check_query = "SELECT * FROM dangkynoitru WHERE masv = ? OR cccd = ? OR emailvku = ?";
-    $stmt_check = $conn->prepare($check_query);
-    $stmt_check->bind_param("ss", $masv, $cccd, $emailvku);
-    $stmt_check->execute();
-    $result = $stmt_check->get_result();
+// Kiểm tra xem mã sinh viên hoặc CCCD đã tồn tại trong bảng hay chưa
+$checkQuery = "SELECT * FROM dangkynoitru WHERE masv = ? OR cccd = ?";
+$stmtCheck = $conn->prepare($checkQuery);
+$stmtCheck->bind_param("ss", $masv, $cccd);
+$stmtCheck->execute();
+$result = $stmtCheck->get_result();
 
-    if ($result->num_rows > 0) {
-        // Nếu đã tồn tại, hiển thị thông báo lỗi
-        echo "<script>alert('Mã sinh viên hoặc CCCD đã tồn tại!'); window.history.back();</script>";
+if ($result->num_rows > 0) {
+    // Nếu tồn tại bản ghi trùng, hiển thị thông báo
+    echo "<script>alert('Mã sinh viên hoặc CCCD đã tồn tại! Vui lòng nhập lại.');</script>";
+    echo "<script>window.location.href = '/../Quanliktx/view/DangKyNoiTru.php';</script>";
+} else {
+    // Chuẩn bị câu lệnh SQL với Prepared Statement
+    $stmt = $conn->prepare("INSERT INTO dangkynoitru (masv, ten, ngaysinh, gioitinh, dienthoai, noisinh, emailcanhan, emailvku, khoa, khoa1, nganh, lop, cccd, ngaycap, dantoc, tongiao, tinh, huyen, xa, sonha, ngaybatdau, ngayketthuc, sophong, khu, hotennguoithan, quanhe, dienthoainguoithan, diachithuongtru) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+    // Gán giá trị từ form vào các biến
+    $ten = isset($_POST['ten']) ? $_POST['ten'] : '';
+    $ngaysinh = isset($_POST['ngaysinh']) ? $_POST['ngaysinh'] : '';
+    $gioitinh = isset($_POST['gioitinh']) ? $_POST['gioitinh'] : '';
+    $dienthoai = isset($_POST['dienthoai']) ? $_POST['dienthoai'] : '';
+    $noisinh = isset($_POST['noisinh']) ? $_POST['noisinh'] : '';
+    $emailcanhan = isset($_POST['emailcanhan']) ? $_POST['emailcanhan'] : '';
+    $emailvku = isset($_POST['emailvku']) ? $_POST['emailvku'] : '';
+    $khoa = isset($_POST['khoa']) ? $_POST['khoa'] : '';
+    $khoa1 = isset($_POST['khoa1']) ? $_POST['khoa1'] : '';
+    $nganh = isset($_POST['nganh']) ? $_POST['nganh'] : '';
+    $lop = isset($_POST['lop']) ? $_POST['lop'] : '';
+    $ngaycap = isset($_POST['ngaycap']) ? $_POST['ngaycap'] : '';
+    $dantoc = isset($_POST['dantoc']) ? $_POST['dantoc'] : '';
+    $tongiao = isset($_POST['tongiao']) ? $_POST['tongiao'] : '';
+    $tinh = isset($_POST['tinh']) ? $_POST['tinh'] : '';
+    $huyen = isset($_POST['huyen']) ? $_POST['huyen'] : '';
+    $xa = isset($_POST['xa']) ? $_POST['xa'] : '';
+    $sonha = isset($_POST['sonha']) ? $_POST['sonha'] : '';
+    $ngaybatdau = isset($_POST['ngaybatdau']) ? $_POST['ngaybatdau'] : '';
+    $ngayketthuc = isset($_POST['ngayketthuc']) ? $_POST['ngayketthuc'] : '';
+    $sophong = isset($_POST['sophong']) ? $_POST['sophong'] : '';
+    $khu = isset($_POST['khu']) ? $_POST['khu'] : '';
+    $hotennguoithan = isset($_POST['hotennguoithan']) ? $_POST['hotennguoithan'] : '';
+    $quanhe = isset($_POST['quanhe']) ? $_POST['quanhe'] : '';
+    $dienthoainguoithan = isset($_POST['dienthoainguoithan']) ? $_POST['dienthoainguoithan'] : '';
+    $diachithuongtru = isset($_POST['diachithuongtru']) ? $_POST['diachithuongtru'] : '';
+
+    $stmt->bind_param("ssssssssssssssssssssssssssss", $masv, $ten, $ngaysinh, $gioitinh, $dienthoai, $noisinh, $emailcanhan, $emailvku, $khoa, $khoa1, $nganh, $lop, $cccd, $ngaycap, $dantoc, $tongiao, $tinh, $huyen, $xa, $sonha, $ngaybatdau, $ngayketthuc, $sophong, $khu, $hotennguoithan, $quanhe, $dienthoainguoithan, $diachithuongtru);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Đăng ký thành công!');</script>";
+        
+        // Chuyển hướng sau khi đăng ký thành công để tránh thông báo khi tải lại
+        echo "<script>window.location.href = '/../Quanliktx/view/DangKyNoiTru.php';</script>";
     } else {
-        // Nếu chưa tồn tại, tiến hành chèn dữ liệu vào cơ sở dữ liệu
-        $insert_query = "INSERT INTO dangkynoitru (masv, ten, ngaysinh, gioitinh, dienthoai, noisinh, emailcanhan, emailvku, khoa, khoa1, nganh, lop, cccd, ngaycap, dantoc, tongiao, tinh, huyen, xa, sonha, hotennguoithan, quanhe, dienthoainguoithan, diachithuongtru, chonktx) 
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt_insert = $conn->prepare($insert_query);
-        $stmt_insert->bind_param( "sssssssssssssssssssssssss",
-        $masv,
-        $ten,
-        $ngaysinh,
-        $gioitinh,
-        $dienthoai,
-        $noisinh,
-        $emailcanhan,
-        $emailvku,
-        $khoa,
-        $khoa1,
-        $nganh,
-        $lop,
-        $cccd,
-        $ngaycap,
-        $dantoc,
-        $tongiao,
-        $tinh,
-        $huyen,
-        $xa,
-        $sonha,
-        $hotennguoithan,
-        $quanhe,
-        $dienthoainguoithan,
-        $diachithuongtru,
-        $chonktx);
-
-        if ($stmt_insert->execute()) {
-            echo "<script>alert('Đăng ký thành công!'); window.history.back();</script>";
-        } else {
-            echo "<script>alert('Lỗi khi đăng ký: " . $stmt_insert->error . "'); window.history.back();</script>";
-        }
-        $stmt_insert->close();
+        echo "Lỗi: " . $stmt->error;
     }
-    $stmt_check->close();
+    $stmt->close();
 }
 
+$stmtCheck->close();
 $conn->close();
 ?>
 
