@@ -14,6 +14,16 @@
   </style>
 </head>
  <body class="bg-gray-100">
+      <!-- Kiểm tra và hiển thị thông báo -->
+      <?php if (isset($successMessage)): ?>
+        <div class="fixed top-0 left-0 w-full bg-green-500 text-white text-center py-2">
+            <strong><?php echo $successMessage; ?></strong>
+        </div>
+    <?php elseif (isset($errorMessage)): ?>
+        <div class="fixed top-0 left-0 w-full bg-red-500 text-white text-center py-2">
+            <strong><?php echo $errorMessage; ?></strong>
+        </div>
+    <?php endif; ?>
 
  <div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
 <div class="w-full flex justify-center mt-0">
@@ -107,53 +117,83 @@ function confirmLogout() {
         </div>
 
         <!-- Main content -->
-        <div class="flex-1 p-6">
-            <h1 class="text-2xl font-semibold mb-4">Hóa đơn điện</h1>
-            <table class="min-w-full bg-white">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b">ID</th>
-                        <th class="py-2 px-4 border-b">Phòng</th>
-                        <th class="py-2 px-4 border-b">Khu</th>
-                        <th class="py-2 px-4 border-b">Chữ số điện cũ</th>
-                        <th class="py-2 px-4 border-b">Chữ số điện mới</th>
-                        <th class="py-2 px-4 border-b">Thành tiền</th>
-                        <th class="py-2 px-4 border-b">Hành động</th>
-                    </tr>
-                </thead>
-                <tbody id="billTable">
-                    <tr>
-                        <td class="py-2 px-4 border-b">1</td>
-                        <td class="py-2 px-4 border-b">101</td>
-                        <td class="py-2 px-4 border-b">A</td>
-                        <td class="py-2 px-4 border-b">1000</td>
-                        <td class="py-2 px-4 border-b">1050</td>
-                        <td class="py-2 px-4 border-b" id="totalAmount-1"></td>
-                        <td class="py-2 px-4 border-b">
-                            <button class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">Sửa</button>
-                            <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Xóa</button>
-                            <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">Cập nhật</button>
-                        </td>
-                    </tr>
-                    <!-- More rows as needed -->
-                </tbody>
-            </table>
-        </div>
+        <div class="flex-1 p-6 bg-gray-100 min-h-screen">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Hóa đơn điện</h1>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="py-3 px-6 text-left">ID</th>
+                    <th class="py-3 px-6 text-left">Phòng</th>
+                    <th class="py-3 px-6 text-left">Khu</th>
+                    <th class="py-3 px-6 text-left">Chữ số điện cũ</th>
+                    <th class="py-3 px-6 text-left">Chữ số điện mới</th>
+                    <th class="py-3 px-6 text-left">Thành tiền</th>
+                    <th class="py-3 px-6 text-center">Hành động</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="billTable" class="text-gray-700">
+            <form method="POST" action="/../Quanliktx/controller/HoaDonDien.php">
+    <tr class="hover:bg-gray-100">
+        <td class="py-3 px-6 border-b" id="id-1">1</td> <!-- Đây là phần hiển thị ID -->
+        
+        <!-- Các ô nhập liệu khác -->
+        <td class="py-3 px-6 border-b">
+            <input type="text" class="w-full p-2 border rounded" id="phong-1" name="phong[]" placeholder="Nhập phòng">
+        </td>
+        
+        <td class="py-3 px-6 border-b">
+            <input type="text" class="w-full p-2 border rounded" id="khu-1" name="khu[]" placeholder="Nhập khu">
+        </td>
+        
+        <td class="py-3 px-6 border-b">
+            <input type="number" class="w-full p-2 border rounded" id="chisodiencu-1" name="chisodiencu[]" value="1000" placeholder="Nhập chữ số điện cũ">
+        </td>
+        
+        <td class="py-3 px-6 border-b">
+            <input type="number" class="w-full p-2 border rounded" id="chisodienmoi-1" name="chisodienmoi[]" value="1050" placeholder="Nhập chữ số điện mới">
+        </td>
+
+        <td class="py-3 px-6 border-b font-semibold text-green-600" id="thanhtien-1" name="thanhtien"></td>
+        
+        <td class="py-3 px-6 border-b space-x-2">
+           <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">Sửa</button>
+           <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">Xóa</button>
+           <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition mt-[5px]">Lưu</button>
+           <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition mt-[5px]" onclick="saveBill(1)">Cập nhật</button>
+        </td>
+    </tr>
+    </form>
+    <!-- Thêm các hàng khác ở đây -->
+</tbody>
+
+
+        </table>
+    </div>
+</div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                const rows = document.querySelectorAll('#billTable tr');
-                rows.forEach((row, index) => {
-                    const oldReading = parseInt(row.children[3].textContent);
-const newReading = parseInt(row.children[4].textContent);
-                    const totalAmountCell = row.children[5];
+         function calculateAmount(rowId) {
+    // Lấy giá trị nhập vào cho số điện cũ và mới
+    const oldReading = parseInt(document.getElementById(`chisodiencu-${rowId}`).value);
+    const newReading = parseInt(document.getElementById(`chisodienmoi-${rowId}`).value);
 
-                    if (!isNaN(oldReading) && !isNaN(newReading)) {
-                        const totalAmount = (newReading - oldReading) * 3000;
-                        totalAmountCell.textContent = totalAmount.toLocaleString('vi-VN') + ' VND';
-                    }
-                });
-            });
+    // Kiểm tra nếu giá trị nhập vào hợp lệ
+    if (!isNaN(oldReading) && !isNaN(newReading) && oldReading !== "" && newReading !== "") {
+        // Tính thành tiền (giả sử giá 1 kWh là 3000 VND)
+        const totalAmount = (newReading - oldReading) * 3000;
+
+        // Cập nhật giá trị thành tiền vào ô với ID "thanhtien-{rowId}"
+        document.getElementById(`thanhtien-${rowId}`).textContent = totalAmount.toLocaleString('vi-VN') + " VND";
+    } else {
+        // Nếu dữ liệu không hợp lệ, hiển thị "N/A"
+        document.getElementById(`thanhtien-${rowId}`).textContent = "N/A";
+    }
+}
+
+
 
             function confirmLogout() {
                 // Hiển thị hộp thoại xác nhận

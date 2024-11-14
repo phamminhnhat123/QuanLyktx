@@ -82,7 +82,7 @@
             <tbody>
                 <?php
                 // Kết nối đến CSDL
-                $conn = new mysqli("localhost:3306", "root", "", "qlktx");
+                $conn = new mysqli("localhost:3307", "root", "", "qlktx");
 
                 // Kiểm tra kết nối
                 if ($conn->connect_error) {

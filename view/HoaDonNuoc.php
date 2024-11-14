@@ -110,7 +110,7 @@ function confirmLogout() {
     <!-- Main Content for Water Bill Interface -->
     <div class="flex-1 p-8 overflow-auto bg-gray-50">
 
-        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Hóa đơn nước</h2>
+    <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center font-bold">Hóa đơn nước</h2>
 
         <div class="overflow-x-auto shadow-lg rounded-lg">
             <table class="min-w-full table-auto bg-white">

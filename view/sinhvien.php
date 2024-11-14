@@ -43,7 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Kiểm tra mật khẩu
             if (password_verify($password, $hashed_password)) {
-                // Chuyển hướng đến trang Tham Sinh Vien1
+                // Thiết lập biến session để ghi nhận trạng thái đăng nhập thành công
+                $_SESSION['loggedin'] = true;
+
+                // Chuyển hướng đến trang Admin.php
                 header("Location: Admin.php");
                 exit(); // Dừng script sau khi chuyển hướng
             } else {
