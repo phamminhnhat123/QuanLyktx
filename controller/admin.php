@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['role'] !== 'admin') {
+    // Nếu không phải admin, chuyển hướng đến trang accessdenied.php
+    header("Location: ../view/accessdenied.php");
+    exit();
+}
+
 require __DIR__.'/../model/connect.php';
 
 // Kiểm tra xem người dùng có gửi thông tin hay không
