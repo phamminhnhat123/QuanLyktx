@@ -1,12 +1,19 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
+    header("Location: accessdenied.php");
+    exit();
+}
+?>
 
 <html>
- <head>
+<head>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
- </head>
- <body class="bg-gray-100">
+</head>
+<body class="bg-gray-100">
 
- <div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
+<div class="bg-blue-500 h-10  fixed top-0 left-0 w-full z-50">
 <div class="w-full flex justify-center mt-0">
  <div class="overflow-hidden whitespace-nowrap w-[400px]">
    <p class="text-2xl text-yellow-500 font-bold inline-block animate-marquee">
