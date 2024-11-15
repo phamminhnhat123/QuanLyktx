@@ -98,7 +98,7 @@
   <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for log-in -->
   <span>Đăng nhập</span>
 </a>
-<a href="/../Quanliktx/view/sinhvien.php">
+<a href="/../Quanliktx/view/AdminDangNhap.php">
   <!-- Icon Admin (User Shield) -->
   <i class="fas fa-user-shield"></i> <!-- Font Awesome icon for Admin -->
   <span>Admin</span>
