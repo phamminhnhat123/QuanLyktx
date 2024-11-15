@@ -4,6 +4,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
     header("Location: accessdenied.php");
     exit();
 }
+
+echo "Session ID: " . session_id() . "<br>";
+echo "Session Data: " . print_r($_SESSION, true);
 ?>
 
 <html>

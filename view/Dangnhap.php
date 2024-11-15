@@ -43,6 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Kiểm tra mật khẩu
             if (password_verify($password, $hashed_password)) {
+                session_regenerate_id(true);
+                $_SESSION['loggedin'] = true;
+                $_SESSION['user'] = $loginInput;
+                $_SESSION['role'] = 'user';
+                session_write_close();
                 // Chuyển hướng đến trang Tham Sinh Vien1
                 header("Location: SinhVien1.php");
                 exit(); // Dừng script sau khi chuyển hướng

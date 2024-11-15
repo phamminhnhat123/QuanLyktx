@@ -16,23 +16,20 @@ if ($conn->connect_error) {
 }
 
 // Xử lý đăng nhập
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $loginInput = isset($_POST['cccd_or_email']) ? $_POST['cccd_or_email'] : '';
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $loginInput = $_POST['cccd_or_email'] ?? '';
     $password = $_POST['matkhau'];
     $captcha_input = $_POST['captcha_input'];
 
     // Kiểm tra mã Captcha
-    if ($captcha_input != $_SESSION['captcha']) {
+    if ($captcha_input !== ($_SESSION['captcha'] ?? '')) {
         echo "<script>alert('Captcha không đúng!');</script>";
     } else {
-        // Xác định xem người dùng nhập CCCD hay email
-        if (filter_var($loginInput, FILTER_VALIDATE_EMAIL)) {
-            // Nếu nhập email
-            $stmt = $conn->prepare("SELECT matkhau FROM dangky WHERE email = ?");
-        } else {
-            // Nếu nhập CCCD
-            $stmt = $conn->prepare("SELECT matkhau FROM dangky WHERE cccd = ?");
-        }
+        $query = filter_var($loginInput, FILTER_VALIDATE_EMAIL)
+            ? "SELECT matkhau FROM dangky WHERE email = ?"
+            : "SELECT matkhau FROM dangky WHERE cccd = ?";
+
+        $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $loginInput);
         $stmt->execute();
         $stmt->store_result();
@@ -41,18 +38,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_result($hashed_password);
             $stmt->fetch();
 
-            // Kiểm tra mật khẩu
             if (password_verify($password, $hashed_password)) {
-                // Chuyển hướng đến trang Tham Sinh Vien1
-                header("Location: SinhVien1.php");
-                exit(); // Dừng script sau khi chuyển hướng
+                session_regenerate_id(true);
+                $_SESSION['loggedin'] = true;
+                $_SESSION['user'] = $loginInput;
+                $_SESSION['role'] = 'user';
+
+                header("Location: ../view/SinhVien1.php");
+                exit();
             } else {
                 echo "<script>alert('Sai mật khẩu!');</script>";
             }
         } else {
             echo "<script>alert('Tài khoản không tồn tại!');</script>";
         }
-        $stmt->close();
     }
 }
 

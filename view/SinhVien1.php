@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'user') {
+    header("Location: Dangnhap.php"); 
+    exit();
+}
+echo "Session ID: " . session_id() . "<br>";
+echo "Session Data: " . print_r($_SESSION, true);
+?>
+
 <html>
 <head>
     <title>Tham Quan Online</title>

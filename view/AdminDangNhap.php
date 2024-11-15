@@ -44,8 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Kiểm tra mật khẩu
             if (password_verify($password, $hashed_password)) {
                 // Thiết lập biến session để ghi nhận trạng thái đăng nhập thành công
+                session_regenerate_id(true);
                 $_SESSION['loggedin'] = true;
-
+                $_SESSION['user'] = $loginInput;
+                $_SESSION['role'] = 'user';
+                session_write_close();
                 // Chuyển hướng đến trang Admin.php
                 header("Location: Admin.php");
                 exit(); // Dừng script sau khi chuyển hướng
